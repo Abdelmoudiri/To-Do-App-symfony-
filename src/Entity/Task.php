@@ -19,6 +19,12 @@ class Task
     #[ORM\Column(length: 255)]
     private ?string $description = null;
 
+    #[ORM\Column(type:'datetime_immutable')]
+    private \DateTimeImmutable $createdAt;
+
+    #[ORM\Column(type:'datetime')]
+    private \DateTime $updatedAt;
+
     public function getId(): ?int
     {
         return $this->id;
