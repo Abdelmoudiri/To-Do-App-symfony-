@@ -25,6 +25,11 @@ class Task
     #[ORM\Column(type:'datetime')]
     private \DateTime $updatedAt;
 
+    public function __construct()
+    {
+        $this->setTimestamps();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -52,5 +57,26 @@ class Task
         $this->description = $description;
 
         return $this;
+    }
+
+    public function getCreatedAt(): \DateTimeImmutable
+    {
+        return $this->createdAt;
+    }
+
+    public function getUpdatedAt(): \DateTime
+    {
+        return $this->updatedAt;
+    }
+
+    public function updateTimestamp(): void
+    {
+        $this->updatedAt = new \DateTime();
+    }
+
+    public function setTimestamps(): void
+    {
+        $this->createdAt = new \DateTimeImmutable();
+        $this->updatedAt = new \DateTime();
     }
 }
