@@ -1,0 +1,16 @@
+{
+    "json.schemas": [
+    ],
+    "launch": {
+        "configurations": [],
+        "compounds": []
+    },
+    "github.copilot.advanced": {
+    },
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    }
+}
